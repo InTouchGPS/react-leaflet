@@ -1,6 +1,6 @@
 // @flow
 
-import { CircleMarker as LeafletCircleMarker } from 'leaflet'
+import { CircleMarker as LeafletCircleMarker, latLng } from 'leaflet'
 
 import { withLeaflet } from './context'
 import Path from './Path'
@@ -19,8 +19,8 @@ class CircleMarker extends Path<LeafletElement, Props> {
     return el
   }
 
-  updateLeafletElement(fromProps: Props, toProps: Props) {
-    if (toProps.center !== fromProps.center) {
+  updateLeafletElement(fromProps: Props, toProps: Props) {    
+    if (!latLng(toProps.center).equals(fromProps.center)) {
       this.leafletElement.setLatLng(toProps.center)
     }
     if (toProps.radius !== fromProps.radius) {

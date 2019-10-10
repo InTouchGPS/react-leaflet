@@ -13,7 +13,7 @@
     "build:umd": "cross-env BABEL_ENV=rollup NODE_ENV=development rollup -c",
     "build:umd:min": "cross-env BABEL_ENV=rollup NODE_ENV=production rollup -c",
     "build:flow": "flow-copy-source src lib && flow-copy-source src es",
-    "build": "npm run clean && npm run build:cjs && npm run build:es && npm run build:flow && npm run build:umd && npm run build:umd:min",
+    "build": "npm run clean && npm run build:es && npm run build:flow",
     "jest": "cross-env BABEL_ENV=development NODE_ENV=test jest",
     "jest:watch": "cross-env BABEL_ENV=development NODE_ENV=test jest --watch",
     "lint": "eslint ./example ./src",
@@ -22,12 +22,12 @@
     "test": "npm run lint && npm run flow && npm run jest",
     "test:watch": "npm run lint && npm run flow && npm run jest:watch",
     "start": "npm run test && npm run build",
-    "prepublishOnly": "npm run build",
+    "prepare": "npm run build",
     "examples": "webpack-dev-server --config ./example/webpack.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PaulLeCam/react-leaflet.git"
+    "url": "https://github.com/InTouchGPS/react-leaflet.git"
   },
   "keywords": [
     "react-component",
@@ -38,9 +38,9 @@
   "author": "Paul Le Cam <paul@ulem.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PaulLeCam/react-leaflet/issues"
+    "url": "https://github.com/InTouchGPS/react-leaflet/issues"
   },
-  "homepage": "https://github.com/PaulLeCam/react-leaflet",
+  "homepage": "https://github.com/InTouchGPS/react-leaflet",
   "files": [
     ".babelrc",
     "dist/*",
